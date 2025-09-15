@@ -14,6 +14,9 @@
 <b>Autocomplete Search</b>: The search bar includes an active, real-time autocomplete feature that suggests city names as you type, making it faster to find a location.
 <br>
 <h3>Technologies Used</h3>
+<br>
 <b>Frontend:</b> HTML, CSS, JavaScript
+<br>
 <b>API</b>: OpenWeatherMap API (or a similar weather data provider)
-<b>Voice Recognition</b>b: A voice-to-text API (e.g., a native browser API or a service like Google Text-to-Speech) for the voice assistant functionality.
+<br>
+<b>Voice Recognition</b>: A voice-to-text API (e.g., a native browser API or a service like Google Text-to-Speech) for the voice assistant functionality.
