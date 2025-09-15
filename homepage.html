@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+    
+        .input-group .form-control {
+            border-right: 0;
+            border-radius: 10px 0 0 10px;
+        }
+        .input-group-append .btn {
+            border-left: 0;
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #voice-search-btn {
+            background-color: #007bff;
+            color: white;
+            border-radius: 50%;
+            padding: 5px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 8px;
+        }
+
+       
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        
+        ion-icon {
+            font-size: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        
+        #search-btn {
+            width: 45px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 10px 10px 0;
+        }
+        #city-input {
+            margin-right: 8px;
+            box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+        }
+        .row{
+          justify-content:space-between;
+          border-radius:8px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .col-md-4{
+         margin-top:15px;
+         margin-bottom:15px;
+         border-radius:28px;
+        }
+        #st{
+          border-radius:5px;
+          box-shadow: rgba(0, 0, 0, 0.35) 5px 0px 15px;
+        }
+        #forecast-table{
+          border-radius:5px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        .btn{
+           box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 8px;
+           color:#fff;
+           text-align:center;
+           font-size:15px;
+        }
+    </style>
+</head>
+<body>
+
+   
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Met Report</a>
+        
+        <div class="ml-auto">
+            <a href="signup.html" class="btn" role="button" data-toggle="button" aria-pressed="true">SignUp</a>
+        </div>
+    </nav>
+
+    <!-- Search bar -->
+    <div class="container mt-4">
+        <div class="input-group mb-3">
+            <input type="text" id="city-input" class="form-control" placeholder="Enter city">
+            <div class="input-group-append">
+                <button class="btn" type="button" id="search-btn"><ion-icon name="search"></ion-icon></button>
+                <button class="btn" type="button" id="voice-search-btn"><ion-icon name="mic" style="margin:0px 3px;"></ion-icon></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Weather Information -->
+    <div class="container text-center mt-4">
+        <h2 id="city-name">City Name</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-header"><ion-icon name="thermometer"></ion-icon>Temperature</div>
+                    <div class="card-body">
+                        <h3 id="temp">-- &deg;C</h3>
+                        <p>Max Temp: <span id="max-temp">-- &deg;C</span></p>
+                        <p>Min Temp: <span id="min-temp">-- &deg;C</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-header"><ion-icon name="water"></ion-icon>Humidity & Sun</div>
+                    <div class="card-body">
+                        <h3 id="humidity">--%</h3>
+                        <p><ion-icon class="icon" name="sunny"></ion-icon>Sunrise: <span id="sunrise">--:--</span></p>
+                        <p><ion-icon class="icon" name="moon"></ion-icon>Sunset: <span id="sunset">--:--</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-header"><ion-icon name="speedometer"></ion-icon>Wind Info</div>
+                    <div class="card-body">
+                        <h3 id="wind-speed">-- km/hr</h3>
+                        <p>Feels Like: <span id="feels-like">-- &deg;C</span></p>
+                        <p>Wind Degree: <span id="wind-degree">--&deg;</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forecast Table -->
+    <div class="container mt-4">
+        <table class="table table-bordered text-center">
+            <thead id="st">
+                <tr>
+                    <th><ion-icon name="today"></ion-icon>Day</th>
+                    <th>Temp (&deg;C)</th>
+                    <th><ion-icon name="thermometer-outline"></ion-icon>Max Temp (&deg;C)</th>
+                    <th><ion-icon name="thermometer"></ion-icon>Min Temp (&deg;C)</th>
+                    <th><ion-icon name="partly-sunny"></ion-icon>Weather</th>
+                    <th><ion-icon name="analytics"></ion-icon>Trend</th>
+                </tr>
+            </thead>
+            <tbody id="forecast-table">
+                <!-- Forecast data will be dynamically populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Speak button for summary -->
+    <div class="container text-center mt-4 border">
+      <h4 class="m-3">Tap to listen🗣️</h4>
+        <button id="speak-summary-btn" class="btn btn-primary" style="height:60px;width:60px;border-radius:50%;text-align: center;margin:30px;">
+            <ion-icon name="language"></ion-icon>
+        </button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 90%;
+            box-sizing: border-box;
+        }
+
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+
+        .logo:hover {
+            animation: zoomInOut 3s ease-in-out infinite;
+        }
+
+        @keyframes zoomInOut {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.5);
+            }
+        }
+        h1 {
+            font-size: 4em;
+            margin: 10px 0;
+        }
+        h2 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+        .get-started-btn {
+            position: absolute;
+            bottom: 20px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #0072ff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 250px;
+            max-width: 90%;
+            white-space: nowrap;
+
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin: 80px 0px;
+        }
+        .get-started-btn:hover {
+            background-color: #005bb5;
+            text-decoration: underline;
+        }
+
+        .get-started-btn:active {
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.5em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .get-started-btn {
+                font-size: 3em;
+                /* Reduce font size for smaller screens */
+                margin-bottom: -40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 3em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .get-started-btn {
+                font-size: 1em;
+                /* Reduce font size for smaller screens */
+                margin: 80px 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="met_logo.jpeg" alt="Weather Logo" class="logo">
+        <h1>MET</h1>
+        <h2>Report</h2>
+    </div>
+    <button id="getStartedBtn" class="get-started-btn">Get Started</button>
+
+    <script>
+        document.getElementById('getStartedBtn').addEventListener('click', function () {
+            this.style.transition = "transform 0.2s";
+            this.style.transform = "scale(0.95)";
+            setTimeout(function () {
+                window.location.href = 'homepage.html'; 
+            }, 200);
+        });
+    </script>
+</body>
+
+</html>

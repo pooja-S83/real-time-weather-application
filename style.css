@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(135, 206, 250, 0.7); /* Transparent sky blue background */  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(135, 206, 250, 0.8); /* Transparent sky blue background */
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-form {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-group i {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    font-size: 16px;
+    color: #ccc;
+  }
+  
+  .form-group a {
+    color: #007bff;
+    text-decoration: none;
+    float: right;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  /* CSS for the Anchor Tag Styled as a Button */
+.button-link {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;  /* Remove underline from the link */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.button-link:active {
+  background-color: #003f7f; /* Even darker shade when clicked */
+}
+
+  
+  p {
+    margin-top: 20px;
+  }
+  
+  p a {
+    color: #007bff;
+    text-decoration: none;
+  }
