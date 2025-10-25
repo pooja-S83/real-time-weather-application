@@ -8,7 +8,6 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <style>
-    
         .input-group .form-control {
             border-right: 0;
             border-radius: 10px 0 0 10px;
@@ -44,14 +43,12 @@
             justify-content: center;
         }
 
-        
         ion-icon {
             font-size: 20px;
             vertical-align: middle;
             margin-right: 5px;
         }
 
-        
         #search-btn {
             width: 45px;
             height: 38px;
@@ -88,14 +85,40 @@
            text-align:center;
            font-size:15px;
         }
+       
+        #unit-toggle {
+        background: rgba(135, 206, 250, 0.3); 
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
+        color: #000;
+        font-weight: 500;
+        }
+        
+        #unit-toggle:hover {
+        background-color: rgba(135, 206, 250, 0.5);
+        cursor: pointer;
+        }
+        #unit-toggle option {
+        background-color: rgba(135, 206, 250, 0.8); 
+        color: #000;
+        font-weight: 500;
+        }
+        .select{
+            background-color: #007bff;
+        }
     </style>
 </head>
 <body>
-
-   
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Met Report</a>
-        
+        <a class="navbar-brand" href="weather.html">Met Report</a>
+        <div class="ml-3 d-flex align-items-center">
+        <label  for="unit-toggle" class="text-white mr-2 mb-0">Units:</label>
+        <select id="unit-toggle" class="form-control form-control-sm bg-light">
+            <option value="metric">°C</option>
+            <option value="imperial">°F</option>
+        </select>
+        </div>
         <div class="ml-auto">
             <a href="signup.html" class="btn" role="button" data-toggle="button" aria-pressed="true">SignUp</a>
         </div>
